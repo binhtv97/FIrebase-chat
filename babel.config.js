@@ -10,6 +10,7 @@ module.exports = api => ({
           src: './src',
           screen: './src/Screens',
           services: './src/Services',
+          hook: './src/Hooks',
         },
       },
     ],

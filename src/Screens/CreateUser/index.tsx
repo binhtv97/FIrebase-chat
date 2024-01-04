@@ -1,5 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import Timer from 'src/Components/CountDown';
 
 const CreateUser = () => {
   return (
@@ -11,6 +12,7 @@ const CreateUser = () => {
       <Text>CreateUser</Text>
       <Text>CreateUser</Text>
       <Text>CreateUser</Text>
+      <Timer initialSeconds={300} />
     </View>
   );
 };
