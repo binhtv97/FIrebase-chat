@@ -1,5 +1,5 @@
 import firestore from '@react-native-firebase/firestore';
-import {FireStoreCollection, type UserProfileProps} from '../../interfaces';
+import {FireStoreCollection, type UserProfileProps} from '../../Interfaces';
 
 const createUserProfile = async (userId: string, name: string) => {
   const userRef = firestore()

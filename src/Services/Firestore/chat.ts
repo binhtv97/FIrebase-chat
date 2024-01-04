@@ -15,8 +15,8 @@ import type {
   MemberProps,
   MessageProps,
   UserProfileProps,
-} from '../../interfaces';
-import { FireStoreCollection } from '../../interfaces';
+} from '../../Interfaces';
+import { FireStoreCollection } from '../../Interfaces';
 
 let userInfo: UserProfileProps;
 let currentUserId = '';

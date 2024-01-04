@@ -2,7 +2,7 @@
  * Created by NL on 6/1/23.
  */
 import {decryptData, generateKey} from './AESCrypto';
-import type {MessageProps} from '../interfaces';
+import type {MessageProps} from '../Interfaces';
 
 const formatMessageData = (message: MessageProps, userName: string) => {
   return {

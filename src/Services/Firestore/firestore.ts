@@ -13,7 +13,7 @@ import {
   FireStoreCollection,
   type MessageProps,
   type UserProfileProps,
-} from '../../interfaces';
+} from '../../Interfaces';
 import {uploadFileToFirebase} from '../Firebase';
 
 interface FirestoreProps {
