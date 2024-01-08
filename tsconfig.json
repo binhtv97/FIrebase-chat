@@ -6,6 +6,7 @@
       "src/*": ["./src/*"],
       "screen/*": ["./src/Screens/*"],
       "hook/*": ["./src/Hooks/*"],
+      "components/*": ["./src/Components/*"],
     }
   }
 }

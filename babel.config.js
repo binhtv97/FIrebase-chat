@@ -11,6 +11,7 @@ module.exports = api => ({
           screen: './src/Screens',
           services: './src/Services',
           hook: './src/Hooks',
+          components: ['./src/Components/*'],
         },
       },
     ],

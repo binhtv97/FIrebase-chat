@@ -9,11 +9,9 @@ const Stack = createNativeStackNavigator<AppStackParamList>();
 export const MainNavigator = () => (
   <Stack.Navigator
     initialRouteName={RouteKey.CreateUser}
-    screenOptions={
-      {
-        // headerShown: false,
-      }
-    }>
+    screenOptions={{
+      headerShown: false,
+    }}>
     <Stack.Screen name={RouteKey.CreateUser} component={CreateUser} />
   </Stack.Navigator>
 );

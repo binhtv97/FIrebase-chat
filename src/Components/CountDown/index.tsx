@@ -16,7 +16,11 @@ export interface TimerProps {
   style?: StyleProp<ViewStyle>;
   initialSeconds: number;
 }
-const Timer = ({afterCountDownFnc, style, initialSeconds}: TimerProps) => {
+export const Timer = ({
+  afterCountDownFnc,
+  style,
+  initialSeconds,
+}: TimerProps) => {
   let intervalTimeBySecond = 1000;
   const [seconds, setSeconds] = useSafeState(initialSeconds);
   const timeEnd = useRef(moment().add(300, 'seconds').unix());
@@ -60,5 +64,3 @@ const Timer = ({afterCountDownFnc, style, initialSeconds}: TimerProps) => {
     </>
   );
 };
-
-export default Timer;

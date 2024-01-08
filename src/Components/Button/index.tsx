@@ -10,11 +10,11 @@ import {
   ImageStyle,
 } from 'react-native';
 import {View} from 'react-native';
-import {responsiveHeight, responsiveWidth} from 'src/Themes';
-import Image from '../Image';
+import {Images, responsiveHeight, responsiveWidth} from 'src/Themes';
+import {CustomImage} from '../Image';
 interface LabelProps {
   text: string;
-  style: StyleProp<TextStyle>;
+  style?: StyleProp<TextStyle>;
 }
 
 export interface CustomButtonProps {
@@ -26,12 +26,12 @@ export interface CustomButtonProps {
   isDefault?: boolean;
   color?: string;
   textStyle?: StyleProp<TextStyle>;
-  icon?: string;
+  icon?: keyof typeof Images;
   iconStyle?: StyleProp<ImageStyle>;
   position?: 'left' | 'right' | undefined;
   description?: string;
 }
-const CustomButton = ({
+export const CustomButton = ({
   style,
   label,
   onPress,
@@ -40,7 +40,7 @@ const CustomButton = ({
   isDefault = true,
   color = '#32AEA6',
   textStyle,
-  icon = 'icon-scan',
+  icon,
   iconStyle,
   position,
   description,
@@ -57,7 +57,7 @@ const CustomButton = ({
     return (
       <>
         {position === 'left' && icon && (
-          <Image name={icon} style={iconStyle} resizeMode={'contain'} />
+          <CustomImage name={icon} style={iconStyle} resizeMode={'contain'} />
         )}
         <Text style={[textStyle]}>
           {' '}
@@ -71,8 +71,8 @@ const CustomButton = ({
               })
             : null}
         </Text>
-        {position === 'right' && (
-          <Image name={icon} style={iconStyle} resizeMode={'contain'} />
+        {position === 'right' && icon && (
+          <CustomImage name={icon} style={iconStyle} resizeMode={'contain'} />
         )}
       </>
     );
@@ -88,7 +88,13 @@ const CustomButton = ({
       ) : description ? (
         <View style={styles.footerContainer}>
           <View style={styles.footerImg}>
-            <Image name={icon} style={iconStyle} resizeMode={'contain'} />
+            {icon && (
+              <CustomImage
+                name={icon}
+                style={iconStyle}
+                resizeMode={'contain'}
+              />
+            )}
           </View>
           <View style={styles.footerText}>
             {Array.isArray(description) && (
@@ -102,8 +108,6 @@ const CustomButton = ({
     </TouchableOpacity>
   );
 };
-
-export default CustomButton;
 
 const styles = StyleSheet.create({
   container: {

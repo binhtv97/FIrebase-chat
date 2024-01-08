@@ -11,20 +11,18 @@ export interface CustomImageProps {
   resizeMode?: ResizeMode;
   uri?: string;
   requireFastImage?: boolean;
+  tintColor?: string;
 }
 
-const CustomImage = ({
+export const CustomImage = ({
   style,
   name,
   resizeMode = 'contain',
   uri,
   requireFastImage = false,
+  tintColor,
 }: CustomImageProps) => {
   if (requireFastImage) {
-    let tintColor = null;
-    if (style?.tintColor) {
-      tintColor = style.tintColor;
-    }
     if (uri) {
       return (
         <FastImage
@@ -54,5 +52,3 @@ const CustomImage = ({
     );
   }
 };
-
-export default CustomImage;
