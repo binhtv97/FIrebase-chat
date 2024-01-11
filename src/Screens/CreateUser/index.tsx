@@ -4,7 +4,7 @@ import LayOut from 'src/Components/Layout';
 import {CustomButton} from 'src/Components';
 import {checkUsernameExist, createUserProfile} from 'src/Services/Firestore';
 
-const CreateUser = () => {
+export const CreateUser = () => {
   const [username, setUserName] = useState<string>('');
   const [id, setUserId] = useState<string>('');
 
@@ -48,8 +48,6 @@ const CreateUser = () => {
     </LayOut>
   );
 };
-
-export default CreateUser;
 
 const styles = StyleSheet.create({
   container: {
